@@ -1,6 +1,6 @@
 import url from "url"
 import path from "path"
-import childProcess from "child_process"
+import {execSync} from "child_process"
 
 const log = console.log
 
@@ -11,7 +11,7 @@ export default () => {
 
   const bin = process.env.CI ? path.resolve(url.parse(import.meta.url).path, "../../bin/phraseapp") : "phraseapp"
 
-  const pushOutput = childProcess.execSync(
+  const pushOutput = execSync(
     `${bin} push --access-token $PHRASEAPP_TOKEN --wait`
   ).toString()
   log(pushOutput)
@@ -33,4 +33,6 @@ export default () => {
 
     log(cleanOutput)
   })
+
+  process.exit(0)
 }

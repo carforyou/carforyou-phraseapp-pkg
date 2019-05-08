@@ -11,6 +11,11 @@ PHRASEAPP_TOKEN=abc123 cfy-phraseapp push
 npm run release
 ```
 
+## Manual test run
+```
+CIRCLE_BRANCH=master PHRASEAPP_TOKEN=abc123 cfy-phraseapp push
+```
+
 ## Development
 You can link your local npm package in any project to test it locally:
 ```
