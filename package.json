@@ -27,9 +27,14 @@
       [
         "@pika/plugin-build-node"
       ],
-      ["@pika/plugin-copy-assets", {
-        "files": ["bin/"]
-      }],
+      [
+        "@pika/plugin-copy-assets",
+        {
+          "files": [
+            "bin/"
+          ]
+        }
+      ],
       [
         "@pika/plugin-simple-bin",
         {
@@ -37,8 +42,5 @@
         }
       ]
     ]
-  },
-  "dependencies": {
-    "phraseapp": "0.0.5"
   }
 }
