@@ -4,10 +4,10 @@ phraseapp:
 
   push:
     sources:
-    - file: ./test/locales/<locale_name>/app.json
+    - file: ./static/locales/<locale_name>/app.json
 
   pull:
     targets:
-    - file: ./test/locales/<locale_name>/app.json
+    - file: ./static/locales/<locale_name>/app.json
       params:
         include_empty_translations: true

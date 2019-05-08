@@ -2,11 +2,10 @@ import url from "url"
 import path from "path"
 import {execSync} from "child_process"
 
-const log = console.log
-
 export default () => {
   if (process.env.CIRCLE_BRANCH !== "master") {
-    throw new Error("Should only run on the master branch on CI")
+    console.error("Should only run on the master branch on CI")
+    process.exit(1)
   }
 
   const bin = process.env.CI ? path.resolve(url.parse(import.meta.url).path, "../../bin/phraseapp") : "phraseapp"
@@ -14,7 +13,7 @@ export default () => {
   const pushOutput = execSync(
     `${bin} push --access-token $PHRASEAPP_TOKEN --wait`
   ).toString()
-  log(pushOutput)
+  console.log(pushOutput)
 
   const pattern = "Upload ID: (.*),"
   const lineRegex = new RegExp(pattern, "g")
@@ -25,13 +24,13 @@ export default () => {
     const idMatch = idRegex.exec(line)
     const uploadId = idMatch[1]
 
-    log("Cleaning upload id: ", uploadId)
+    console.log("Cleaning upload id:", uploadId)
 
     const cleanOutput = execSync(
       `${bin} upload cleanup --access-token $PHRASEAPP_TOKEN --confirm -v ${uploadId}`
     ).toString()
 
-    log(cleanOutput)
+    console.log(cleanOutput)
   })
 
   process.exit(0)

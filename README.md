@@ -11,6 +11,11 @@ cfy-phraseapp sort
 cfy-phraseapp sort --fix
 ```
 
+Vaildate the consistency of the translation keys:
+```
+cfy-phraseapp validate
+```
+
 Push translations on CI:
 ```
 PHRASEAPP_TOKEN=abc123 cfy-phraseapp push

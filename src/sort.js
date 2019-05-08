@@ -23,9 +23,8 @@ export default (args) => {
   }
 
   if (modifiedFiles.length > 0) {
-    throw new Error(
-      `The following files were not sorted:\n${modifiedFiles.join(", ")}`
-    )
+    console.error("The following files were not sorted:", "\n", modifiedFiles.join(", "))
+    process.exit(1)
   } else {
     process.exit(0)
   }
