@@ -1,10 +1,14 @@
 # CAR FOR YOU Phraseapp workflow
 
 ## Usage
-
 ```
 npm install @carforyou/phraseapp
 PHRASEAPP_TOKEN=abc123 cfy-phraseapp push
+```
+
+## Release a new version
+```
+npm run release
 ```
 
 ## Development
