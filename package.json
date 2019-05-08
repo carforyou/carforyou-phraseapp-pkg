@@ -1,0 +1,44 @@
+{
+  "name": "@carforyou/phraseapp",
+  "version": "0.0.1",
+  "description": "Phraseapp workflow",
+  "scripts": {
+    "build": "pack build",
+    "release": "pack publish && git push --tags"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/autoricardo/carforyou-phraseapp-pkg.git"
+  },
+  "author": "CAR FOR YOU",
+  "homepage": "https://github.com/autoricardo/carforyou-phraseapp-pkg#readme",
+  "devDependencies": {
+    "@pika/pack": "^0.3.7",
+    "@pika/plugin-build-node": "^0.3.16",
+    "@pika/plugin-copy-assets": "^0.3.16",
+    "@pika/plugin-simple-bin": "^0.3.16",
+    "@pika/plugin-standard-pkg": "^0.3.16"
+  },
+  "@pika/pack": {
+    "pipeline": [
+      [
+        "@pika/plugin-standard-pkg"
+      ],
+      [
+        "@pika/plugin-build-node"
+      ],
+      ["@pika/plugin-copy-assets", {
+        "files": ["bin/"]
+      }],
+      [
+        "@pika/plugin-simple-bin",
+        {
+          "bin": "cfy-phraseapp"
+        }
+      ]
+    ]
+  },
+  "dependencies": {
+    "phraseapp": "0.0.5"
+  }
+}
