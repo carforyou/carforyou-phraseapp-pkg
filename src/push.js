@@ -5,7 +5,7 @@ import childProcess from "child_process"
 const log = console.log
 
 export default () => {
-  if (!process.env.CIRCLE_BRANCH !== "master") {
+  if (process.env.CIRCLE_BRANCH !== "master") {
     throw new Error("Should only run on the master branch on CI")
   }
 
