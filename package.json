@@ -42,5 +42,8 @@
         }
       ]
     ]
+  },
+  "dependencies": {
+    "sort-json": "^2.0.0"
   }
 }
