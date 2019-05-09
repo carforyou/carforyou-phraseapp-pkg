@@ -1,3 +1,4 @@
-export default command => {
-  console.log("Unknown command", command)
+export default (availableCommands) => {
+  console.log(`Available commands: ${availableCommands.join(", ")}`)
+  process.exit(1)
 }

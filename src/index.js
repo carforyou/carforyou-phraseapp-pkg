@@ -8,5 +8,5 @@ export default function run (args) {
   const commands = {push, sort, validate}
 
   const command = commands[selectedCommand]
-  command ? command(args) : unknown(selectedCommand)
+  command ? command(args) : unknown(Object.keys(commands))
 }
