@@ -42,5 +42,9 @@
         }
       ]
     ]
+  },
+  "dependencies": {
+    "just-diff": "^2.2.0",
+    "sort-json": "^2.0.0"
   }
 }
