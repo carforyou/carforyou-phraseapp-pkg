@@ -4,7 +4,6 @@ import glob from "glob"
 import { diff } from "just-diff"
 
 export default () => {
-  // todo: test both in project because of the path here...
   const allPaths = glob.sync("static/locales/*/*.json")
   const namespaces = Array.from(
     new Set(allPaths.map(p => path.basename(p, ".json")))
