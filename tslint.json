@@ -1,26 +1,5 @@
 {
-  "extends": ["@carforyou/tslint-rules"],
-  "linterOptions": {
-    "exclude": ["data/*.json"]
-  },
-  "jsRules": true,
-  "rules": {
-    "no-submodule-imports": [
-      true,
-      "next",
-      "react-dom",
-      "next-i18next",
-      "tailwindcss",
-      "~"
-    ],
-    "no-implicit-dependencies": [
-      true,
-      "dev",
-      ["~"]
-    ],
-    "import-blacklist": [
-      true,
-      "next/link"
-    ]
-  }
+  "extends": [
+    "@carforyou/tslint-rules"
+  ]
 }
