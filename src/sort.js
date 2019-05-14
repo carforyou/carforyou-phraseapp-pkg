@@ -1,3 +1,4 @@
+/* tslint:disable:no-console */
 import fs from "fs"
 import glob from "glob"
 import sortJson from "sort-json"

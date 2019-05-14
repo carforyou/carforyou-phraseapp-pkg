@@ -1,3 +1,4 @@
+/* tslint:disable:no-console */
 import url from "url"
 import path from "path"
 import {execSync} from "child_process"
