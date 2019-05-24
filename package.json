@@ -1,6 +1,6 @@
 {
   "name": "@carforyou/phraseapp",
-  "version": "0.1.0-1",
+  "version": "1.0.0",
   "description": "Phraseapp workflow",
   "scripts": {
     "build": "pack build",
