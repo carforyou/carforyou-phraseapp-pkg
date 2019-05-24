@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "description": "Phraseapp workflow",
   "scripts": {
+    "test": "sh test.sh",
     "build": "pack build",
     "release": "pack publish && git push --tags",
     "lint": "tslint --project tsconfig.json",
