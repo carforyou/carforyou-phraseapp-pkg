@@ -1,0 +1,62 @@
+version: 2.1
+
+docker: &DOCKER_NODE
+  docker:
+    - image: circleci/node:10.15
+
+jobs:
+  install:
+    <<: *DOCKER_NODE
+    steps:
+      - checkout
+      - restore_cache:
+          key: v1-npm-{{ checksum "package-lock.json" }}
+      - run: npm ci
+      - save_cache:
+          key: v1-npm-{{ checksum "package-lock.json" }}
+          paths:
+            - ~/.npm
+      - persist_to_workspace:
+          root: ~/
+          paths:
+            - project
+
+  build:
+    <<: *DOCKER_NODE
+    steps:
+      - attach_workspace:
+          at: ~/
+      - run: npm ls
+      - run: npm run build
+
+  unit:
+    <<: *DOCKER_NODE
+    steps:
+      - attach_workspace:
+          at: ~/
+      - run: npm run test
+
+  lint:
+    <<: *DOCKER_NODE
+    steps:
+      - attach_workspace:
+          at: ~/
+      - run: npm run lint
+
+workflows:
+  version: 2
+  test:
+    jobs:
+      - install
+
+      - build:
+          requires:
+            - install
+
+      - unit:
+          requires:
+            - install
+
+      - lint:
+          requires:
+            - install
