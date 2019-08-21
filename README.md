@@ -63,7 +63,9 @@ PHRASEAPP_TOKEN=abc123 npm run release
 ```
 
 ## Update phraseapp-cli
-Get the latest link from https://github.com/phrase/phraseapp-client/releases and download the binary as follows:
+On CI, we use the phrasepp-cli binary. Locally, you will need to install one manually.
+
+To update the CI bindary, get the latest link from https://github.com/phrase/phraseapp-client/releases and download the binary as follows:
 ```
 wget -O bin/phraseapp "https://github.com/phrase/phraseapp-client/releases/download/<version>/phraseapp_linux_386"
 chmod +x bin/phraseapp
