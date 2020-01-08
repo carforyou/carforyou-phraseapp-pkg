@@ -1,4 +1,3 @@
-/* tslint:disable:no-console */
 import fs from "fs"
 import path from "path"
 import yaml from "js-yaml"
@@ -13,9 +12,7 @@ const getLocaleGlobs = () => {
       return target.file.replace("<locale_name>", "*")
     })
   } catch {
-    console.error("Phraseapp config not found falling back to static/locales/*/*.json")
-
-    return [ "static/locales/*/*.json" ]
+    throw new Error("Phraseapp config not found or malformed")
   }
 }
 
