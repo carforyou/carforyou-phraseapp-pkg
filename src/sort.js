@@ -3,8 +3,10 @@ import fs from "fs"
 import glob from "glob"
 import sortJson from "sort-json"
 
+import getLocalesPaths from "./getLocalesPaths"
+
 const modifiedFiles = []
-const paths = glob.sync("static/locales/*/*.json")
+const paths =  getLocalesPaths()
 
 export default (args) => {
   const fix = args.includes("--fix")

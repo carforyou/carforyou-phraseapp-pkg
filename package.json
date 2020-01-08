@@ -1,6 +1,6 @@
 {
   "name": "@carforyou/phraseapp",
-  "version": "1.0.0",
+  "version": "2.0.0",
   "description": "Phraseapp workflow",
   "scripts": {
     "test": "sh test.sh",
@@ -52,6 +52,7 @@
   },
   "dependencies": {
     "glob": "^7.1.4",
+    "js-yaml": "^3.13.1",
     "just-diff": "^2.2.0",
     "sort-json": "^2.0.0"
   }

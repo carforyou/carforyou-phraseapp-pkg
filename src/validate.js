@@ -4,8 +4,10 @@ import path from "path"
 import glob from "glob"
 import { diff } from "just-diff"
 
+import getLocalesPaths from "./getLocalesPaths"
+
 export default () => {
-  const allPaths = glob.sync("static/locales/*/*.json")
+  const allPaths = getLocalesPaths()
   const namespaces = Array.from(
     new Set(allPaths.map(p => path.basename(p, ".json")))
   )
