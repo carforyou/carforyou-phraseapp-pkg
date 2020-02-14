@@ -61,9 +61,9 @@ cfy-phraseapp <command>
 ```
 
 ## Release a new version
-```
-PHRASEAPP_TOKEN=abc123 npm run release
-```
+
+New versions are released on the ci using semantic-release as soon as you merge into master. Please
+make sure your merge commit message adheres to the corresponding conventions.
 
 ## Update phraseapp-cli
 On CI, we use the phrasepp-cli binary. Locally, you will need to install one manually.
