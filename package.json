@@ -23,6 +23,7 @@
     "@pika/plugin-simple-bin": "^0.3.16",
     "@pika/plugin-standard-pkg": "^0.3.16",
     "prettier": "^1.17.0",
+    "semantic-release": "^17.0.3",
     "tslint": "^5.16.0",
     "typescript": "^3.7.5"
   },
