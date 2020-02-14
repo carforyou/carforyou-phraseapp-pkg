@@ -5,7 +5,6 @@
   "scripts": {
     "test": "sh test.sh",
     "build": "pack build",
-    "release": "pack publish && git push --tags",
     "lint": "tslint --project tsconfig.json",
     "format": "tslint --project tsconfig.json --fix"
   },
