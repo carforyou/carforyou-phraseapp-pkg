@@ -1,5 +1,8 @@
 # CAR FOR YOU Phraseapp workflow
 
+[![semantic-release](https://img.shields.io/badge/%20%20%F0%9F%93%A6%F0%9F%9A%80-semantic--release-e10079.svg)](https://github.com/semantic-release/semantic-release)
+
+
 ## Usage
 ```
 npm install @carforyou/phraseapp
@@ -58,9 +61,9 @@ cfy-phraseapp <command>
 ```
 
 ## Release a new version
-```
-PHRASEAPP_TOKEN=abc123 npm run release
-```
+
+New versions are released on the ci using semantic-release as soon as you merge into master. Please
+make sure your merge commit message adheres to the corresponding conventions.
 
 ## Update phraseapp-cli
 On CI, we use the phrasepp-cli binary. Locally, you will need to install one manually.

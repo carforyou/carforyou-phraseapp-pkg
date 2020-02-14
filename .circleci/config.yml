@@ -2,7 +2,7 @@ version: 2.1
 
 docker: &DOCKER_NODE
   docker:
-    - image: circleci/node:10.15
+    - image: circleci/node:10.19
 
 jobs:
   install:
@@ -28,6 +28,11 @@ jobs:
           at: ~/
       - run: npm ls
       - run: npm run build
+      - persist_to_workspace:
+          root: ~/
+          paths:
+            - project/pkg
+
 
   unit:
     <<: *DOCKER_NODE
@@ -42,6 +47,21 @@ jobs:
       - attach_workspace:
           at: ~/
       - run: npm run lint
+
+  release:
+    <<: *DOCKER_NODE
+    steps:
+      - attach_workspace:
+          at: ~/
+      - run: npx semantic-release
+
+  pre_release:
+    <<: *DOCKER_NODE
+    steps:
+      - attach_workspace:
+          at: ~/
+      # manually set PR shell variables to empty to build pull request
+      - run: CI_PULL_REQUEST= CIRCLE_PULL_REQUEST= npx semantic-release
 
 workflows:
   version: 2
@@ -60,3 +80,21 @@ workflows:
       - lint:
           requires:
             - install
+
+      - release:
+          requires:
+            - lint
+            - unit
+            - build
+          filters:
+            branches:
+              only: master
+
+      - pre_release:
+          requires:
+            - lint
+            - unit
+            - build
+          filters:
+            branches:
+              ignore: master
