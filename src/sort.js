@@ -16,7 +16,7 @@ export default (args) => {
     if (previousContent !== newContent) {
       modifiedFiles.push(path)
 
-      if(fix){
+      if (fix){
         fs.writeFileSync(path, newContent)
       }
     }
