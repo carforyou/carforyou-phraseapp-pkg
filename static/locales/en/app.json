@@ -1,4 +1,13 @@
 {
-  "a": "A",
-  "b": "B"
+  "1": "January",
+  "2": "February",
+  "10": "October",
+  "brands": {
+    "title": "Alle Marken"
+  },
+  "car": "{{ count }} Auto",
+  "car_plural": "{{ count }} Autos",
+  "cfyGuaranteeCarousel": {
+    "buttonLabel": "Mehr"
+  }
 }

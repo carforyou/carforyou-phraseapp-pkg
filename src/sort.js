@@ -1,24 +1,26 @@
 /* tslint:disable:no-console */
 import fs from "fs"
-import glob from "glob"
-import sortJson from "sort-json"
 
 import getLocalesPaths from "./getLocalesPaths"
 
 const modifiedFiles = []
-const paths =  getLocalesPaths()
+const paths = getLocalesPaths()
 
 export default (args) => {
   const fix = args.includes("--fix")
 
   paths.forEach(path => {
     const previousContent = fs.readFileSync(path, "utf8")
-    sortJson.overwrite(path)
-    const newContent = fs.readFileSync(path, "utf8")
+    const newContent = JSON.stringify(JSON.parse(previousContent), null, "  ")
 
     if (previousContent !== newContent) {
       modifiedFiles.push(path)
+
+      if (fix){
+        fs.writeFileSync(path, newContent)
+      }
     }
+
   })
 
   if (fix) {
