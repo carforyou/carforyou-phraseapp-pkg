@@ -1,26 +1,22 @@
 /* tslint:disable:no-console */
 import fs from "fs"
-import { sortObj } from "jsonabc"
-import { diff } from "just-diff"
 
 import getLocalesPaths from "./getLocalesPaths"
 
 const modifiedFiles = []
-const paths =  getLocalesPaths()
+const paths = getLocalesPaths()
 
 export default (args) => {
   const fix = args.includes("--fix")
 
   paths.forEach(path => {
-    const previousContent = JSON.parse(fs.readFileSync(path, "utf8"))
-    const newContent = sortObj(previousContent)
+    const previousContent = fs.readFileSync(path, "utf8")
+    const newContent = JSON.stringify(JSON.parse(previousContent), null, "  ")
 
-    const d = diff(previousContent, newContent)
-    if (d.length > 0) {
+    if (previousContent !== newContent) {
       modifiedFiles.push(path)
 
       if(fix){
-        console.log({fix})
         fs.writeFileSync(path, newContent)
       }
     }
