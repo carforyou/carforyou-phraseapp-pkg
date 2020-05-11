@@ -7,8 +7,10 @@ const configFilePath = ".phraseapp.yml"
 
 const getLocaleGlobs = () => {
   try {
-    const phraseappConfig = yaml.safeLoad(fs.readFileSync(path.join(process.cwd(), configFilePath), "utf8"))
-    return phraseappConfig.phraseapp.pull.targets.map(target => {
+    const phraseappConfig = yaml.safeLoad(
+      fs.readFileSync(path.join(process.cwd(), configFilePath), "utf8")
+    )
+    return phraseappConfig.phraseapp.pull.targets.map((target) => {
       return target.file.replace("<locale_name>", "*")
     })
   } catch {
