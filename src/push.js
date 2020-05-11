@@ -1,7 +1,7 @@
 /* tslint:disable:no-console */
 import url from "url"
 import path from "path"
-import {execSync} from "child_process"
+import { execSync } from "child_process"
 
 export default () => {
   if (process.env.CIRCLE_BRANCH !== "master") {
@@ -9,7 +9,9 @@ export default () => {
     process.exit(1)
   }
 
-  const bin = process.env.CI ? path.resolve(url.parse(import.meta.url).path, "../../bin/phraseapp") : "phraseapp"
+  const bin = process.env.CI
+    ? path.resolve(url.parse(import.meta.url).path, "../../bin/phraseapp")
+    : "phraseapp"
 
   const pushOutput = execSync(
     `${bin} push --access-token $PHRASEAPP_TOKEN --wait`
@@ -20,7 +22,7 @@ export default () => {
   const lineRegex = new RegExp(pattern, "g")
   const matchingLines = pushOutput.match(lineRegex)
 
-  matchingLines.forEach(line => {
+  matchingLines.forEach((line) => {
     const idRegex = new RegExp(pattern)
     const idMatch = idRegex.exec(line)
     const uploadId = idMatch[1]
