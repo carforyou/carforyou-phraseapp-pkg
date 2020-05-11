@@ -15,15 +15,15 @@
   "author": "CAR FOR YOU",
   "homepage": "https://github.com/autoricardo/carforyou-phraseapp-pkg#readme",
   "devDependencies": {
-    "@carforyou/tslint-rules": "0.0.5",
+    "@carforyou/tslint-rules": "3.0.0",
     "@pika/pack": "^0.3.7",
     "@pika/plugin-build-node": "^0.3.16",
     "@pika/plugin-copy-assets": "^0.3.16",
     "@pika/plugin-simple-bin": "^0.3.16",
     "@pika/plugin-standard-pkg": "^0.3.16",
-    "prettier": "^1.17.0",
+    "prettier": "^2.0.5",
     "semantic-release": "^17.0.3",
-    "tslint": "^5.16.0",
+    "tslint": "^5.20.1",
     "typescript": "^3.7.5"
   },
   "@pika/pack": {
