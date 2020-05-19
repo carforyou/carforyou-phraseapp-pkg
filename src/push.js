@@ -1,4 +1,3 @@
-/* tslint:disable:no-console */
 import url from "url"
 import path from "path"
 import { execSync } from "child_process"
@@ -16,7 +15,7 @@ export default () => {
   const pushOutput = execSync(
     `${bin} push --access-token $PHRASEAPP_TOKEN --wait`
   ).toString()
-  console.log(pushOutput)
+  console.info(pushOutput)
 
   const pattern = "Upload ID: (.*),"
   const lineRegex = new RegExp(pattern, "g")
@@ -27,13 +26,13 @@ export default () => {
     const idMatch = idRegex.exec(line)
     const uploadId = idMatch[1]
 
-    console.log("Cleaning upload id:", uploadId)
+    console.info("Cleaning upload id:", uploadId)
 
     const cleanOutput = execSync(
       `${bin} upload cleanup --access-token $PHRASEAPP_TOKEN --confirm -v ${uploadId}`
     ).toString()
 
-    console.log(cleanOutput)
+    console.info(cleanOutput)
   })
 
   process.exit(0)
