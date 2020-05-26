@@ -15,7 +15,7 @@
   "author": "CAR FOR YOU",
   "homepage": "https://github.com/autoricardo/carforyou-phraseapp-pkg#readme",
   "devDependencies": {
-    "@carforyou/eslint-config": "1.1.0-initial-rules-e5696a2396ab8be5b23db3d5a9dac62f7ba98e51.2",
+    "@carforyou/eslint-config": "^1.1.0",
     "@pika/pack": "^0.3.7",
     "@pika/plugin-build-node": "^0.3.16",
     "@pika/plugin-copy-assets": "^0.3.16",
