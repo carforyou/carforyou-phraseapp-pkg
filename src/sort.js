@@ -26,6 +26,7 @@ export default (args) => {
   }
 
   if (modifiedFiles.length > 0) {
+    // eslint-disable-next-line no-console
     console.error(
       "The following files were not sorted:",
       "\n",
