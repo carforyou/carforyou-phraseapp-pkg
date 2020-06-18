@@ -2,7 +2,7 @@ version: 2.1
 
 docker: &DOCKER_NODE
   docker:
-    - image: circleci/node:10.19
+    - image: circleci/node:10.21
 
 jobs:
   install:
@@ -32,7 +32,6 @@ jobs:
           root: ~/
           paths:
             - project/pkg
-
 
   unit:
     <<: *DOCKER_NODE
