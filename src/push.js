@@ -4,6 +4,7 @@ import { execSync } from "child_process"
 
 export default () => {
   if (process.env.CIRCLE_BRANCH !== "master") {
+    // eslint-disable-next-line no-console
     console.error("Should only run on the master branch on CI")
     process.exit(1)
   }
@@ -15,6 +16,7 @@ export default () => {
   const pushOutput = execSync(
     `${bin} push --access-token $PHRASEAPP_TOKEN --wait`
   ).toString()
+  // eslint-disable-next-line no-console
   console.info(pushOutput)
 
   const pattern = "Upload ID: (.*),"
@@ -26,12 +28,14 @@ export default () => {
     const idMatch = idRegex.exec(line)
     const uploadId = idMatch[1]
 
+    // eslint-disable-next-line no-console
     console.info("Cleaning upload id:", uploadId)
 
     const cleanOutput = execSync(
       `${bin} upload cleanup --access-token $PHRASEAPP_TOKEN --confirm -v ${uploadId}`
     ).toString()
 
+    // eslint-disable-next-line no-console
     console.info(cleanOutput)
   })
 

@@ -44,6 +44,7 @@ export default () => {
 
     if (errors.length) {
       errors.forEach((error) => {
+        // eslint-disable-next-line no-console
         console.error(error.message, "\n", error.diff)
       })
       process.exit(1)
