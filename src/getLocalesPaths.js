@@ -1,7 +1,7 @@
-import fs from "fs"
 import path from "path"
 import yaml from "js-yaml"
 import glob from "glob"
+import fs from "fs"
 
 const configFilePath = ".phraseapp.yml"
 
