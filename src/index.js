@@ -1,7 +1,7 @@
-import push from "./push"
-import sort from "./sort"
 import validate from "./validate"
 import unknown from "./unknown"
+import sort from "./sort"
+import push from "./push"
 
 export default function run(args) {
   const selectedCommand = args[2]

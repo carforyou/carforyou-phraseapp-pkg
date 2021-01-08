@@ -1,7 +1,7 @@
-import fs from "fs"
 import path from "path"
-import glob from "glob"
 import { diff } from "just-diff"
+import glob from "glob"
+import fs from "fs"
 
 import getLocalesPaths from "./getLocalesPaths"
 
