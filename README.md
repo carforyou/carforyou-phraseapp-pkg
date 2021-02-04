@@ -28,7 +28,7 @@ Create a .phraseapp.yml:
 ```
 phraseapp:
   project_id: <your project id>
-  file_format: json
+  file_format: nested_json
 
   push:
     sources:
