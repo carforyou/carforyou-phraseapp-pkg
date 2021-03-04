@@ -52,6 +52,7 @@
     "es-abstract": "^1.18.0-next.1",
     "glob": "^7.1.4",
     "js-yaml": "^3.14.0",
-    "just-diff": "^3.0.2"
+    "just-diff": "^3.0.2",
+    "sort-phraseapp-locales": "^0.0.1"
   }
 }
