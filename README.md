@@ -24,6 +24,23 @@ Push translations on CI:
 PHRASEAPP_TOKEN=abc123 cfy-phraseapp push
 ```
 
+Create a .phraseapp.yml:
+```
+phraseapp:
+  project_id: <your project id>
+  file_format: nested_json
+
+  push:
+    sources:
+    - file: ./public/static/locales/<locale_name>/app.json
+
+  pull:
+    targets:
+    - file: ./public/static/locales/<locale_name>/app.json
+      params:
+        include_empty_translations: true
+```
+
 ## Development
 Some commands require a `PHRASEAPP_TOKEN`. In order not to type it over and over again, you can set it "globally" in your `.zshrc` or equivalent:
 ```
@@ -39,7 +56,7 @@ We also ave a dummy phraseapp project set up, where you can safely push to:
 CIRCLE_BRANCH=master PHRASEAPP_TOKEN=abc123 cfy-phraseapp push
 ```
 
-## Test
+## Test
 ```
 PHRASEAPP_TOKEN=abc123 npm run test
 ```
