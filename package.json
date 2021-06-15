@@ -49,6 +49,7 @@
     ]
   },
   "dependencies": {
+    "@types/node": "^14.14.31",
     "glob": "^7.1.4",
     "js-yaml": "^3.14.0",
     "just-diff": "^3.0.2",
