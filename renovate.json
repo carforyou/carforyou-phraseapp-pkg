@@ -1,7 +1,28 @@
 {
-  "extends": ["config:base", ":preserveSemverRanges"],
-  "prConcurrentLimit": 5,
+  "extends": [
+    "config:base",
+    "schedule:earlyMondays",
+    ":pinDependencies"
+  ],
   "reviewers": ["team:frontend"],
+  "packageRules": [
+    {
+      "matchDepTypes": ["devDependencies"],
+      "matchUpdateTypes": ["minor", "patch"],
+      "automerge": true
+    },
+    {
+      "matchDatasources": ["docker", "final"],
+      "matchUpdateTypes": ["minor", "patch", "digest"],
+      "schedule": null,
+      "automerge": true
+    },
+    {
+      "matchPackagePatterns": ["^@carforyou\/.*"],
+      "schedule": null,
+      "automerge": false
+    }
+  ],
   "node": {
     "supportPolicy": ["lts_latest"]
   }
