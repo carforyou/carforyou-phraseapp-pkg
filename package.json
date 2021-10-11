@@ -51,7 +51,7 @@
   "dependencies": {
     "@types/node": "14.14.31",
     "glob": "7.1.6",
-    "js-yaml": "3.14.0",
+    "js-yaml": "3.14.1",
     "just-diff": "3.0.2",
     "sort-phraseapp-locales": "0.0.1"
   }
