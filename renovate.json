@@ -13,6 +13,7 @@
     },
     {
       "matchDatasources": ["docker", "final"],
+      "matchPackageNames": ["node", "@types/node"],
       "matchUpdateTypes": ["minor", "patch", "digest"],
       "schedule": null,
       "automerge": true
