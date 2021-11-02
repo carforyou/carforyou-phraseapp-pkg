@@ -52,7 +52,7 @@
     "@types/node": "14.17.32",
     "glob": "7.1.6",
     "js-yaml": "3.14.1",
-    "just-diff": "3.0.2",
+    "just-diff": "3.1.1",
     "sort-phraseapp-locales": "0.0.1"
   }
 }
