@@ -64,17 +64,11 @@ PHRASEAPP_TOKEN=abc123 npm run test
 ## Development
 You can link your local npm package to integrate it with any local project:
 ```
-cd carforyou-phraseapp-pkg/pkg
-npm link
-
-cd carforyou-listings-web
-npm link @carforyou/phraseapp
-
 cd carforyou-phraseapp-pkg
 npm run build
 
 cd carforyou-listings-web
-cfy-phraseapp <command>
+npm link ../carforyou-phraseapp-pkg
 ```
 
 ## Release a new version

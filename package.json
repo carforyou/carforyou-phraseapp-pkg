@@ -4,9 +4,10 @@
   "description": "Phraseapp workflow",
   "scripts": {
     "test": "sh test.sh",
-    "build": "pika build",
+    "build": "rimraf pkg && tsc --outDir pkg",
     "lint": "eslint --ext ts,js,tsx,jsx,json .",
-    "format": "npm run lint -- --fix"
+    "format": "npm run lint -- --fix",
+    "typecheck": "tsc --noEmit"
   },
   "repository": {
     "type": "git",
@@ -16,43 +17,21 @@
   "homepage": "https://github.com/autoricardo/carforyou-phraseapp-pkg#readme",
   "devDependencies": {
     "@carforyou/eslint-config": "4.0.4",
-    "@pika/pack": "0.5.0",
-    "@pika/plugin-build-node": "0.9.2",
-    "@pika/plugin-copy-assets": "0.9.2",
-    "@pika/plugin-simple-bin": "0.9.2",
-    "@pika/plugin-standard-pkg": "0.9.2",
+    "@types/node": "16.11.19",
+    "rimraf": "3.0.2",
     "semantic-release": "17.4.1",
     "typescript": "4.5.4"
   },
-  "@pika/pack": {
-    "pipeline": [
-      [
-        "@pika/plugin-standard-pkg"
-      ],
-      [
-        "@pika/plugin-build-node"
-      ],
-      [
-        "@pika/plugin-copy-assets",
-        {
-          "files": [
-            "bin/"
-          ]
-        }
-      ],
-      [
-        "@pika/plugin-simple-bin",
-        {
-          "bin": "cfy-phraseapp"
-        }
-      ]
-    ]
-  },
   "dependencies": {
-    "@types/node": "16.11.19",
     "glob": "7.2.0",
     "js-yaml": "3.14.1",
     "just-diff": "5.0.1",
     "sort-phraseapp-locales": "0.0.1"
-  }
+  },
+  "bin": {
+    "cfy-phraseapp": "./pkg/index.js"
+  },
+  "files": [
+    "pkg/**/*"
+  ]
 }
