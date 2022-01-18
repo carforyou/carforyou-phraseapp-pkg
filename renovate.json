@@ -2,7 +2,7 @@
   "extends": [
     "config:base",
     "schedule:earlyMondays",
-    ":pinDependencies"
+    ":pinOnlyDevDependencies"
   ],
   "reviewers": ["team:frontend"],
   "packageRules": [
@@ -13,10 +13,10 @@
     },
     {
       "matchDatasources": ["docker", "final"],
-      "matchPackageNames": ["node", "@types/node"],
+      "matchPackageNames": ["node", "@types/node", "cimg/node"],
       "matchUpdateTypes": ["minor", "patch", "digest"],
-      "schedule": null,
-      "automerge": true
+      "automerge": true,
+      "schedule": null
     },
     {
       "matchPackagePatterns": ["^@carforyou\/.*"],
