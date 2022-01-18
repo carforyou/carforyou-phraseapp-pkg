@@ -1,4 +1,3 @@
-import url from "url"
 import path from "path"
 import { execSync } from "child_process"
 
@@ -10,7 +9,7 @@ export default () => {
   }
 
   const bin = process.env.CI
-    ? path.resolve(url.parse(import.meta.url).path, "../../bin/phraseapp")
+    ? path.resolve(__dirname, "../../bin/phraseapp")
     : "phraseapp"
 
   const pushOutput = execSync(
