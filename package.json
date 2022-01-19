@@ -4,7 +4,7 @@
   "description": "Phraseapp workflow",
   "scripts": {
     "test": "sh test.sh",
-    "build": "rimraf pkg && tsc --outDir pkg",
+    "build": "rimraf pkg && tsc --outDir pkg && chmod +x pkg/index.js",
     "lint": "eslint --ext ts,js,tsx,jsx,json .",
     "format": "npm run lint -- --fix",
     "typecheck": "tsc --noEmit"

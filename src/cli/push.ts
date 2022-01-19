@@ -9,7 +9,7 @@ export default () => {
   }
 
   const bin = process.env.CI
-    ? path.resolve(__dirname, "../../bin/phraseapp")
+    ? path.resolve(__dirname, "./bin/phraseapp")
     : "phraseapp"
 
   const pushOutput = execSync(
