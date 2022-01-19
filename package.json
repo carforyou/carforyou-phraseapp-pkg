@@ -32,6 +32,7 @@
     "cfy-phraseapp": "./pkg/index.js"
   },
   "files": [
-    "pkg/**/*"
+    "pkg/**/*",
+    "bin/phraseapp"
   ]
 }
