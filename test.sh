@@ -2,6 +2,8 @@
 
 set -e
 npm run build
-./pkg/dist-node/index.bin.js validate
-./pkg/dist-node/index.bin.js sort
-CIRCLE_BRANCH=master ./pkg/dist-node/index.bin.js push
+
+chmod +x pkg/index.js
+./pkg/index.js validate
+./pkg/index.js sort
+CIRCLE_BRANCH=master ./pkg/index.js push
