@@ -1,6 +1,6 @@
 import path from "path"
 import { diff } from "just-diff"
-import glob from "glob"
+import { sync } from "glob"
 import fs from "fs"
 
 import getLocalesPaths from "./getLocalesPaths"
@@ -19,7 +19,7 @@ export default () => {
   }
 
   namespaces.forEach((namespace) => {
-    const paths = glob.sync(`static/locales/*/${namespace}.json`)
+    const paths = sync(`static/locales/*/${namespace}.json`)
     let previousKeys = []
     let previousLocale = null
     const errors = []
