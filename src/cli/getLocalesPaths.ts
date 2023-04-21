@@ -1,6 +1,6 @@
 import path from "path"
 import yaml from "js-yaml"
-import glob from "glob"
+import { sync } from "glob"
 import fs from "fs"
 
 const configFilePath = ".phraseapp.yml"
@@ -22,6 +22,6 @@ export default () => {
   const localesGlobs = getLocaleGlobs()
 
   return localesGlobs.reduce((acc, g) => {
-    return acc.concat(glob.sync(g))
+    return acc.concat(sync(g))
   }, [])
 }
