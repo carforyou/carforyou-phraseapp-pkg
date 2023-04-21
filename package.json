@@ -25,7 +25,7 @@
   "dependencies": {
     "glob": "8.1.0",
     "js-yaml": "3.14.1",
-    "just-diff": "5.2.0",
+    "just-diff": "6.0.2",
     "sort-phraseapp-locales": "0.0.1"
   },
   "bin": {
