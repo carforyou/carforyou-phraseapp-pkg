@@ -1,9 +1,5 @@
 {
-  "extends": [
-    "config:base",
-    "schedule:earlyMondays",
-    ":pinDependencies"
-  ],
+  "extends": ["config:base", "schedule:earlyMondays", ":pinDependencies"],
   "reviewers": ["team:frontend"],
   "packageRules": [
     {
@@ -12,18 +8,26 @@
       "automerge": true
     },
     {
-      "matchDatasources": ["docker", "final"],
-      "matchPackageNames": ["node", "@types/node"],
+      "matchDatasources": ["docker"],
       "matchUpdateTypes": ["minor", "patch", "digest"],
       "schedule": null,
       "automerge": true
     },
     {
-      "matchPackagePatterns": ["^@carforyou\/.*"],
+      "matchPackageNames": [
+        "node",
+        "@types/node",
+        "cimg/node",
+        "circleci/node"
+      ],
+      "matchManagers": ["dockerfile", "npm", "nvm", "circleci"],
+      "versioning": "node",
+      "schedule": null,
+      "groupName": "node (lts-only)"
+    },
+    {
+      "matchPackagePatterns": ["^@carforyou/.*"],
       "schedule": null
     }
-  ],
-  "node": {
-    "supportPolicy": ["lts_latest"]
-  }
+  ]
 }
