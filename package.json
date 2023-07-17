@@ -23,7 +23,7 @@
     "typescript": "5.1.6"
   },
   "dependencies": {
-    "glob": "10.3.0",
+    "glob": "10.3.3",
     "js-yaml": "3.14.1",
     "just-diff": "6.0.2",
     "sort-phraseapp-locales": "0.0.1"
