@@ -19,7 +19,7 @@
     "@carforyou/eslint-config": "4.0.79",
     "@types/node": "18.18.8",
     "rimraf": "5.0.5",
-    "semantic-release": "22.0.5",
+    "semantic-release": "22.0.7",
     "typescript": "5.2.2"
   },
   "dependencies": {
