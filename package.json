@@ -20,7 +20,7 @@
     "@types/node": "18.19.3",
     "rimraf": "5.0.5",
     "semantic-release": "22.0.10",
-    "typescript": "5.3.2"
+    "typescript": "5.3.3"
   },
   "dependencies": {
     "glob": "10.3.10",
