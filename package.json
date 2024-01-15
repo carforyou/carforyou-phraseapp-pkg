@@ -16,7 +16,7 @@
   "author": "CAR FOR YOU",
   "homepage": "https://github.com/autoricardo/carforyou-phraseapp-pkg#readme",
   "devDependencies": {
-    "@carforyou/eslint-config": "4.0.82",
+    "@carforyou/eslint-config": "4.0.83",
     "@types/node": "18.19.7",
     "rimraf": "5.0.5",
     "semantic-release": "22.0.12",
